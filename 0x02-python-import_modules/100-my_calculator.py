@@ -16,6 +16,7 @@ if __name__ == "__main__":
 
     if operator not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
     else:
         if operator == '+':
             result = add(a, b)
