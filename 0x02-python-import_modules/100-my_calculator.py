@@ -4,16 +4,25 @@ if __name__ == "__main__":
     """prints the result of the addition of all arguments"""
     from sys import argv
     from calculator_1 import add, sub, mul, div
-    arg_num = len(argv) - 1
     operators = ["+", "-", "*", "/"]
+
+    if len(argv) != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
 
     a = int(argv[1])
     operator = argv[2]
     b = int(argv[3])
 
-    if arg_num < 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-    elif operator not in operators:
+    if operator not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
     else:
-        print("{} {} {} = {}".format(a, operator, b, add(a, b)))
+        if operator == '+':
+            result = add(a, b)
+        elif operator == '-':
+            result = sub(a, b)
+        elif operator == '*':
+            result = mul(a, b)
+        elif operator == '/':
+            result = div(a, b)
+        print("{} {} {} = {}".format(a, operator, b, result))
