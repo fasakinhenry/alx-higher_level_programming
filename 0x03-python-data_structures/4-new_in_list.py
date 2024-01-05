@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 
 """ replaces an element in a list at a specific position
 without modifying the original list (like in C) """

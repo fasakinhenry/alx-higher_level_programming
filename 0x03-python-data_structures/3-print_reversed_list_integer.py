@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 
 # Retrieves an element from a list like in C
 def print_reversed_list_integer(my_list=[]):
