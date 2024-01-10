@@ -1,7 +1,7 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 
-# Retrieves an element from a list like in C
+# Prints all integers of a list, in reverse order
 def print_reversed_list_integer(my_list=[]):
-    my_list.reverse()
-    for i in range(0, len(my_list)):
-        print(my_list[i])
+    if my_list:
+        for i in reversed(my_list):
+            print("{:d}".format(i))
