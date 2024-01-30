@@ -1,0 +1,122 @@
+# 2-matrix_divided.txt
+===========================
+Using 0-matrix_divided.py
+===========================
+
+This module defines a function that divides all elements of a matrix``matrix_divided(matrix, div)``.
+-------------------------------------------------------------------------------------------------
+
+Test the module with single number div
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [[3, 6, 9], [12, 15, 18]]
+     >>> matrix_divided(matrix, 3)
+     [[1.00, 2.00, 3.00], [4.00, 5.00, 6.00]]
+        
+
+Test the module with multiple number div
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [[3, 6, 9], [12, 15, 18]]
+     >>> matrix_divided(matrix, 33)
+     [[0.10, 0.18, 0.27], [0.36, 0.45, 0.55]]
+     
+
+Test the module with a large number div
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [[3, 6, 9], [12, 15, 18]]
+     >>> matrix_divided(matrix, 333)
+     [[0.00, 0.02, 0.03], [0.04, 0.05, 0.05]]
+     
+
+Test the module with a larger number div
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [[3, 6, 9], [12, 15, 18]]
+     >>> matrix_divided(matrix, 3333)
+     [[0.00, 0.00, 0.00], [0.00, 0.00, 0.00]]
+
+
+Test the module with negative div
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [[3, 6, 9], [12, 15, 18]]
+     >>> matrix_divided(matrix, -3)
+     [[-1.00, -2.00, -3.00], [-4.00, -5.00, -6.00]]
+        
+
+Test the module with multiple matrix
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [[3, 6, 9], [12, 15, 18], [21, 24, 27]]
+     >>> matrix_divided(matrix, 3)
+     [[1.00, 2.00, 3.00], [4.00, 5.00, 6.00], [7.00, 8.00, 9.00]]
+
+
+Test the module with floats matrix
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [[3.3, 6.3, 9.3], [12.6, 15.0, 18.3], [21.0, 24.3, 27.0]]
+     >>> matrix_divided(matrix, 3)
+     [[1.10, 2.10, 3.10], [4.20, 5.00, 6.10], [7.00, 8.10, 9.00]]
+
+
+Error Handling
+==============
+
+Testing incorrect matrix argument.
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix = [{1, 2, 3}, {4, 5, 6}]
+     >>> matrix_divided(matrix, 3)
+     Traceback (most recent call last):
+     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Testing matrix with None values
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix_divided(None, None)
+     Traceback (most recent call last):
+     TypeError: 'NoneType' object is not iterable
+
+
+Testing matrix with None Index
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix_divided([None], None)
+     Traceback (most recent call last):
+     TypeError: object of type 'NoneType' has no len()
+
+
+Testing matrix with incorrect data type
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix_divided(["None"], None)
+     Traceback (most recent call last):
+     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Testing matrix with different row size
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix_divided([[1, 2, 3, 4], [5, 6, 7]], 2)
+     Traceback (most recent call last):
+     TypeError: Each row of the matrix must have the same size
+
+
+Testing the dir argument with 0
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix_divided([[1, 2, 3, 4], [5, 6, 7, 8]], 0)
+     Traceback (most recent call last):
+     ZeroDivisionError: division by zero
+
+
+Testing the dir argument by passing incorrect data type
+::
+     >>> matrix_divided = __import__("2-matrix_divided).matrix_divided
+     >>> matrix_divided([[1, 2, 3, 4], [5, 6, 7, 8]], "emma")
+     Traceback (most recent call last):
+     TypeError: div must be a number
