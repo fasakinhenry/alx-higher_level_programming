@@ -1,109 +1,147 @@
-Test all delimeter with spaces at ends:
->>> text_indentation("Hello   :     Holberton    ?    school.    fooo     ")
-Hello:
-<BLANKLINE>
-Holberton?
-<BLANKLINE>
-school.
-<BLANKLINE>
-fooo
-Test just delimeter:
->>> text_indentation(".?:")
-.
-<BLANKLINE>
-?
-<BLANKLINE>
-:
-<BLANKLINE>
-Test string with the spaces:
->>> text_indentation("    Holberton")
-Holberton
-Test just delimeters:
->>> text_indentation("  ?  ")
-?
-<BLANKLINE>
-Test nonindent inside indent
->>> text_indentation("?Hello.")
-?
-<BLANKLINE>
-Hello.
-<BLANKLINE>
-Test existing newline:
->>> text_indentation("?\n\n.\n\n:")
-?
-<BLANKLINE>
-<BLANKLINE>
-<BLANKLINE>
-.
-<BLANKLINE>
-<BLANKLINE>
-<BLANKLINE>
-:
-<BLANKLINE>
-Test none:
->>> text_indentation(None)
-Traceback (most recent call last):
-...
-TypeError: text must be a string
-Test num:
->>> text_indentation(33)
-Traceback (most recent call last):
-...
-TypeError: text must be a string
-Test string with some spaces:
->>> text_indentation("        Holberton          ")
-Holberton
-Test string with an empty string:
->>> text_indentation("")
-Test string with an empty string (2):
->>> text_indentation("      ")
-Test:
->>> text_indentation("Hello: Holberton")
-Hello:
-<BLANKLINE>
-Holberton
-Test delimeters with spaces:
->>> text_indentation("      ?:  :  ")
-?
-<BLANKLINE>
-:
-<BLANKLINE>
-:
-<BLANKLINE>
-Test newline:
->>> text_indentation("\n")
-<BLANKLINE>
-Test newlines:
->>> text_indentation("\n\n")
-<BLANKLINE>
-<BLANKLINE>
-Test newline 3:
->>> text_indentation("Hello\n\n")
-Hello
-<BLANKLINE>
-Import module:
->>> text_indentation = __import__('5-text_indentation').text_indentation
-Test no delimeters:
->>> text_indentation("Hello Holberton")
-Hello Holberton
-Test string with spaces:
->>> text_indentation("Holberton    ")
-Holberton
-Test all delimeters!:
->>> text_indentation("Hello: Holberton? school. fooo")
-Hello:
-<BLANKLINE>
-Holberton?
-<BLANKLINE>
-school.
-<BLANKLINE>
-fooo
-Test all delimeters with some spaces:
->>> text_indentation("Hello   :   Holberton  ?  school.  fooo")
-Hello:
-<BLANKLINE>
-Holberton?
-<BLANKLINE>
-school.
-<BLANKLINE>
-fooo
+
+================================
+How to Use 5-text_indentation.py
+================================
+
+This module defines a text-indentation function ``text_indentation(text)``.
+
+Usage
+=====
+
+Text is printed with two new lines after each of the characters ``.``, ``?``,
+and ``:``.
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello?")
+    Hello?
+    <BLANKLINE>
+
+No spaces are printed at the beginning of a line.
+
+::
+
+    >>> text_indentation("   Hi there.")
+    Hi there.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("          ")
+
+Similarly, no spaces are printed at the end of each printed line.
+
+::
+
+    >>> text_indentation("Hello.   ")
+    Hello.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("    Woah now.    This is messy.   ")
+    Woah now.
+    <BLANKLINE>
+    This is messy.
+    <BLANKLINE>
+
+New lines are only printed for the characters ``.``, ``?``, and ``:`` -
+text not ending with one of these characters is not ended with a new line.
+
+::
+
+    >>> text_indentation("No ending period, what bad grammar")
+    No ending period, what bad grammar
+
+New lines within a string are printed as normal.
+
+::
+
+    >>> text_indentation("Let's print a new-line! Here goes:\nPrinted.")
+    Let's print a new-line! Here goes:
+    <BLANKLINE>
+    <BLANKLINE>
+    Printed.
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("\n\n\n We just printed three new lines.")
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    We just printed three new lines.
+    <BLANKLINE>
+
+::
+    >>> text_indentation("A sneaky \n new line.")
+    A sneaky 
+    new line.
+    <BLANKLINE>
+
+A combo example:
+
+::
+
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing "
+    ... "elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas "
+    ... "commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, "
+    ... "sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri "
+    ... "nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est "
+    ... "moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde "
+    ... "sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid "
+    ... "voles, postea. Quae animi affectio suum cuique tribuens atque hanc, "
+    ... "quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas "
+    ... "videres") # doctest: +NORMALIZE_WHITESPACE
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+    Fortasse id optimum, sed ubi illud:
+    <BLANKLINE>
+    Plus semper voluptatis?
+    <BLANKLINE>
+    Teneo, inquit, finem illi videri nihil dolere.
+    <BLANKLINE>
+    Transfer idem ad modestiam vel temperantiam, 
+    quae est moderatio cupiditatum rationi oboediens.
+    <BLANKLINE>
+    Si id dicis, vicimus.
+    <BLANKLINE>
+    Inde sermone vario sex illa a Dipylo stadia confecimus.
+    <BLANKLINE>
+    Sin aliud quid voles, postea.
+    <BLANKLINE>
+    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+    <BLANKLINE>
+    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+Invalid Text
+============
+
+The paramter ``text`` must be a string. Otherwise, a TypeError is raised.
+
+::
+
+    >>> text_indentation(7)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation({"one": 1, "two": 2})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
