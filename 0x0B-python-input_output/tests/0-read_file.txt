@@ -1,0 +1,17 @@
+The ``0-read_file`` module
+===========================
+
+Using ``read_file`` 
+-----------------
+
+Importing the function from the module:
+        >>> read_file = __import__("0-read_file").read_file
+        
+Check for module docstring:
+        >>> module_docstring = __import__("0-read_file").__doc__
+        >>> len(module_docstring) > 1
+        True
+        
+Check for function docstring:
+        >>> len(read_file.__doc__) > 0
+        True
