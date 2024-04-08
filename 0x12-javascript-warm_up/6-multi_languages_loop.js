@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Prints 3 lines but uses an array of string and loop
+// Prints 3 lines with array of str & loop
 
 let language = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
