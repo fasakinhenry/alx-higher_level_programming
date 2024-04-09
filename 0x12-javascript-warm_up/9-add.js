@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // Prints the addition of 2 integers
 
-function add(a, b) {
+function add (a, b) {
   console.log(a + b);
 }
 
