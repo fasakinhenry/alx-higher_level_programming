@@ -2,10 +2,7 @@
 // Prints the addition of 2 integers
 
 function add (a, b) {
-  console.log(a + b);
+  return parseInt(a) + parseInt(b);
 }
-
-let a = parseInt(process.argv[2]);
-let b = parseInt(process.argv[3]);
-
-add(a, b);
+  
+console.log(add(process.argv[2], process.argv[3]));
