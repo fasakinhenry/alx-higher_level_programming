@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // Computes and prints a factorial
 
-function factorial(n) {
+function factorial (n) {
   if ((isNaN(n)) || (n === 1)) {
     return 1;
   } else {
