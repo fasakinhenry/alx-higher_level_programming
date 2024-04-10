@@ -1,10 +1,7 @@
 #!/usr/bin/node
-const listToMap = require("./100-data").list;
-let newList =[];
-listToMap.map((index, element) => {
-  newList.push(element * index);
-});
+const data = require('./100-data').list;
 
-console.log(listToMap);
-console.log(newList);
+const arr = data.map(x => x * data.indexOf(x));
+console.log(data);
+console.log(arr);
 
